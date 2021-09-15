@@ -1,25 +1,25 @@
 1. What will be the output and explain the reason.
 
 ```js
-let obj = { name: 'Arya' };
-obj = { surname: 'Stark' };
-let newObj = { name: 'Arya' };
+let obj = { name: "Arya" };
+obj = { surname: "Stark" };
+let newObj = { name: "Arya" };
 let user = obj;
-let arr = ['Hi'];
+let arr = ["Hi"];
 let arr2 = arr;
 ```
 
 Answer the following with reason after going through the above code:
 
-- `[10] === [10]`
-- What is the value of obj? // answer
-- `obj == newObj`
-- `obj === newObj`
-- `user === newObj`
-- `user == newObj`
-- `user == obj`
-- `arr == arr2`
-- `arr === arr2`
+- `[10] === [10]` //false as object cannot be equal.
+- What is the value of obj? // "Stark"
+- `obj == newObj`//false as address is different .
+- `obj === newObj`//false because of different reference point.
+- `user === newObj`//false because of different address.
+- `user == newObj`//false because of different address.
+- `user == obj`//true as reference is same.
+- `arr == arr2`//true because of same address.
+- `arr === arr2`//true as address of storing point is same.
 
 2. What's will be the value of `person1` and `person2` ? Explain with reason. Draw the memory representation diagram.
 
@@ -28,24 +28,24 @@ Answer the following with reason after going through the above code:
 ```js
 function personDetails(person) {
   person.age = 25;
-  person = { name: 'John', age: 50 };
+  person = { name: "John", age: 50 };
   return person;
 }
-var person1 = { name: 'Alex', age: 30 };
+var person1 = { name: "Alex", age: 30 };
 var person2 = personDetails(person1);
-console.log(person1);
-console.log(person2);
+console.log(person1); // { name: "Alex", age: 25 };
+console.log(person2); // { name: "John", age: 50 };
 ```
 
 3. What will be the output of the below code:
 
 ```js
-var brothers = ['Bran', 'John'];
+var brothers = ["Bran", "John"];
 var user = {
-  name: 'Sansa',
+  name: "Sansa",
 };
 user.brothers = brothers;
-brothers.push('Robb');
-console.log(user.brothers === brothers); //1. output
-console.log(user.brothers.length === brothers.length); //2. output
+brothers.push("Robb");
+console.log(user.brothers === brothers); // true
+console.log(user.brothers.length === brothers.length); //true
 ```
